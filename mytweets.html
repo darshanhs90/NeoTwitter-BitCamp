@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="DemoApp">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+	<link rel="icon shortcut" href="images/bird.ico">
+
+    <title>NeoTwitter</title>
+
+    <link href="css/bootstrap-cerulean.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/site.css" rel="stylesheet">
+    <link href="css/flip.css" rel="stylesheet">
+         <link href='css/angular-carousel.css' rel='stylesheet' type='text/css'>
+        <link href='css/demo.css' rel='stylesheet' type='text/css'>
+        <!-- build:js cardflow.min.js -->
+        
+        <!-- endbuild -->
+
+        <!-- build:css cardflow-carousel.min.css -->
+       
+
+        <style>
+        #imgur{
+            height:250px;
+        }
+
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular-touch.min.js"></script>
+
+    <script src="js/angular-carousel.min.js"></script>
+
+    <script src="js/app_mytweets.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" ng-controller="DemoCtrl">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+            	<img src="images/bird_white.png" class="navbar-brand">
+	          <a class="navbar-brand page-scroll" href="index.html"><span class="hidden-sm hidden-xs">Twitter New</span></a>
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+
+                    <li class="hidden">
+                        <a class="page-scroll" href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="tweet.html">Tweet Timeline</a><!-- check button for image tweets and text,search for srch -->
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="mytweets.html">My Tweets</a><!-- add reply all to this,filter tweets,follower tweets based on location
+
+                        notifications if new tweet comes,to push bullet,twitter time line should contain only tweets which have a lost of retweets,count set by user -->
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="sentiment.html">Group Tweet<span class="badge" style="color:Green">New</span></a>
+                    </li>
+                    <li>
+                        <a href="myprof.html">My Profile</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+
+    <section class="section odd-section intro-section" >
+ 		<div class="container">
+ 			<div class="row ">
+ 			<button value="Srch" class="btn btn-info" ng-click="srch()" ng-show="!srchr">Search</button>
+ 			<div class="jumbotron" style="opacity:0.8;background-color:l#0000aa !important; box-sizing: border-box; display:block;background-image: linear-gradient(#54b4eb, #2fa4e7 60%, #1d9ce5);color:black;" ng-show="srchr">
+ 				<label style="color:black" class="btn btn-link" ng-click="showdate()"><b>Search by Date</b></label>
+ 				<div ng-show="shwdate" class="row"><label class="col-lg-2">From:</label><input type="text" class="col-lg-4" placeholder="yyyy mm dd" ng-model="from"/>
+ 				<label style="color:black" class="col-lg-2">To:</label><input class="col-lg-4" type="text" placeholder="yyyy mm dd" ng-model="till"/>
+ 				</div>
+ 				<br>
+				<label style="color:black" class="btn btn-link" ng-click="showlocation()"><b>Search by Location</b></label>
+				<div ng-show="shwlcn" class="row">
+					<div class="col-lg-12"><input class="form-control" type="text" placeholder="Enter Location" ng-model="lcn"/>
+					</div>
+				</div>
+				<br>
+ 				<label style="color:black" class="btn btn-link" ng-click="showtweet()"><b>Search by Tweet</b></label>
+ 				<div ng-show="shwtwt" class="row">
+					<div class="col-lg-12"><input class="form-control" type="text" placeholder="Tweet Query" ng-model="query"/>
+					</div>
+				</div>
+ 			</div>
+ 			</div>
+ 			<!-- {{diff}} --><span ng-click="srch()"> &nbsp;</span>
+ 			<br>
+			
+               
+<div class="row " >
+                <div class="carousel-demo">
+                    <ul rn-carousel rn-carousel-index="carouselIndex3" rn-carousel-transition="hexagon" rn-carousel-buffered class="carousel3" style="max-height:10%;">
+                        <li ng-repeat="card in cards|filter:diff|filter:lcn|filter:query track by $index" style="border-radius: 25px; background-color:#ffffff;"  >
+                    
+<div class="flip-container" style="height:200%;" ontouchstart="this.classList.toggle('hover');"  >
+	<div class="flipper">
+		<div class="front" id="imgur" style="background-image: url(./images/bird.png);background-repeat: no-repeat;border-radius:+25px;" ng-style="setBG($index)">
+			<!-- front content -->
+			<p style="color:green"><b><em>{{card.text}}</em></b></p>
+		</div>
+	<div class="back"  id="imgur" style="background-image: url(./images/bird.png);background-repeat: no-repeat;color:green;"ng-style="setBG1($index)"><b>
+			<p ><span>Time:{{card.created_at}}</span>
+			<br>
+			<span ng-show="{{card.place.name}}!=''">Location:{{card.place.name}}</span>
+			<br>
+			<span>Retweets : {{card.retweet_count}}</span>
+			<br>	
+			<span>Favorited : {{card.favorite_count}}</span>
+			<br>
+            <!-- <span>Sentiment Score:{{$scope.score[$index]}}</span>
+            <br> -->
+            <span>Sentiment Type:{{sentimentType[$index]}}</span>
+            <br>
+            </b>
+			</p>
+	</div>
+	</div>
+</div> 
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <br>
+                
+</div>
+</section>
+
+
+
+
+
+
+
+    <!-- jQuery Version 1.11.0 -->
+    <script src="js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/scrolling-nav.js"></script>
+
+    <!-- Copy code -->
+    <script src="js/ZeroClipboard.js"></script>
+ 
+    <script src="js/script.js"></script>
+
+
+</body>
+ <script>
+      
+    </script>
+</html>

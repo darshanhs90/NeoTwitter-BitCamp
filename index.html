@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+	<link rel="icon shortcut" href="images/bird.ico">
+
+    <title>NeoTwitter</title>
+
+    <link href="css/bootstrap-cerulean.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/site.css" rel="stylesheet">
+       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="js/app_index.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" ng-controller="myCtrl">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+            	<img src="images/bird_white.png" class="navbar-brand">
+	          <a class="navbar-brand page-scroll" href="#page-top"><span class="hidden-sm hidden-xs">NeoTwitter</span></a>
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+
+                    <li class="hidden">
+                        <a class="page-scroll" href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#example">Tweet Timeline</a><!-- check button for image tweets and text,search for srch -->
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#walkthrough">My Tweets</a><!-- add reply all to this,filter tweets,follower tweets based on location
+
+                        notifications if new tweet comes,to push bullet,twitter time line should contain only tweets which have a lost of retweets,count set by user -->
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#usecases">Group Tweet<span class="badge" style="color:Green">New</span></a>
+                    </li>
+                    <li>
+                    	<a href="myprof.html">My Profile</a>
+                    </li>
+                </ul>
+                <!-- <ul class="nav navbar-nav navbar-right">
+                    <li class="pull-right">
+		            	<ul class="nav navbar-nav">
+					        <li class="dropdown">
+					          <a href="#" class="dropdown-toggle hidden-sm hidden-xs" data-toggle="dropdown">Recipes <i class="fa fa-caret-down"></i></a>
+					          <ul class="dropdown-menu" role="menu">
+					            <li><a href="campaigns.html">#Recipe: Hashtag Campaign</a></li>
+					            <li><a href="tweetquotes.html">#Recipe: Tweet Quotes</a></li>
+					          </ul>
+					        </li>
+		            	</ul>
+                    </li>
+			      </ul> -->
+
+            </div>
+            
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <section id="intro" class="section odd-section intro-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1>
+                    	<img src="images/bird.png" height="30" style="margin-top: -8px;">
+                    	What We Do?
+                	</h1>
+                    <p class="lead">
+                    	Enrich the user experience of the twitter application
+                	</p>
+                	<p> 
+                    	<b><em>Neo Twitter</em></b> can be used for: 
+                    	<ul>
+                    		<li>Enhancing your timeline with a much better UX
+                    		<li>Modify the way you look at your tweets
+                    		<li>Search your tweets using date,location and Content
+                    		<li>Send group tweets to multiple people
+                		</ul>
+                    </p>
+                    <p>
+                    	This web app can easily be integrated into your twitter account. 
+                    	The future enhancements are
+                    	<ul>
+	                    	<li><a href="https://dev.twitter.com/rest/collections" target="_target">Pushbullet Feed</a>
+	                    	<li><a href="https://dev.twitter.com/web/tweet-button" target="_target">Pebble feed</a>
+	                    	<li><a href="https://dev.twitter.com/cards/overview" target="_target">Cell phone message feed</a>
+	                    	<li><a href="https://tweetdeck.twitter.com/" target="_target">Add few more features to the web app</a>
+                    	</ul>
+                    </p>
+                   
+                </div>
+                <div class="col-lg-4">
+	                <div class="thumbnail hidden-xs hidden-sm hidden-md" style="margin-top: 70px;">
+	                	<a href="https://register.accenture.com/us-en/registration/Documents/big-data-mp.html#sf32530744" class="btn btn-default" role="button" target="_target">
+	                		<img src="images/campaigns/example_accenture_.png" width="100%">
+                		</a>
+	            	</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="example" class="section even-section example-section">
+        <div class="container">
+        
+            <h1 style="margin-bottom: .5em;">
+	        	<a href="tweet.html">
+	        	<img src="images/bird.png" height="30">
+            	Tweet Timeline
+            	</a>
+        	</h1>
+
+			<div class="example" style="background-image: url(http://news.nationalgeographic.com/content/dam/news/2015/09/space344/3_space344_bt3967.adapt.536.1.jpg);">
+				<div class="example-inset">
+
+	                <div class="row">
+	                <div class="col-sm-2"></div>
+	                	<div class="col-sm-8">
+	                		<h3>
+	                			View your Timeline
+                			</h3>
+                			<img src='http://news.nationalgeographic.com/content/dam/news/2015/09/space344/3_space344_bt3967.adapt.536.1.jpg' style="height:250px"> 
+​	                		<p><b>@NatGeo</b>
+	                			Night Lights Even the northern lights dress in pastels for spring. A composite image of four pictures reveals the auroras as a palette of pale pinks, greens, and purples flickering over Iceland's Kirkjufell mountain
+	                			<br>
+	                		</p>
+	                		<!-- <p>
+	                			<center>
+		                		<a href="https://twitter.com/intent/tweet?button_hashtag=camping" class="twitter-hashtag-button" data-size="large" data-related="dickc,twitter" data-via="camping"  data-url="http://bit.ly/SOMETHING">Tweet #Camping</a>
+								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+								</center>
+							</p> -->
+	                	</div>
+	                	<!-- <div class="col-sm-6">
+				            <a class="twitter-timeline"  href="https://twitter.com/rchoi/timelines/522875858994749443" data-widget-id="522876333395689472">#Camping</a>
+				            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	                	</div> -->
+	                	<div class="col-sm-2"></div>
+	                </div>
+				</div>
+			</div>
+			<p>
+				
+			</p>
+        </div>
+    </section>
+
+    <section id="walkthrough" class="section odd-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false">
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+
+    <div class="item active">
+      <a href="mytweets.html">
+      <h1>
+    	<img src="images/bird.png" height="30" style="margin-top: -8px;">
+      	My Tweets
+      </h1>
+      </a>
+      <div class="walkthrough-body">
+      
+<div class="row">
+	<div class="col-sm-8">
+		<p class="lead">View Your tweets in a customised version</p>
+		<p>The advantages are:
+		<ol>
+			<li><h3>View your twitter flipcards</h3>
+			<li><h3>Get the timestamp of your tweet</h3>
+			<li><h3>Get the location from where you had tweeted</h3>
+			<li><h3>Get the retweetcount and favorite count for your tweets	</h3>
+			<li><h3>Search through your tweets using location,date and content</h3>
+		</ol>
+		
+	</div>
+	<div class="col-sm-4 hidden-sm hidden-xs">
+		<div class="panel panel-default">
+		  <div class="panel-body">
+		    <img src="images/campaigns/collection.png" width="100%">
+		  </div>
+		</div>
+	</div>
+</div>
+
+      
+<!-- 
+	  </div>
+	  <div class="walkthrough-nav">
+		<a class="btn btn-md btn-primary pull-right" href="#carousel-example-generic" role="button" data-slide="next">Step 1: Choose a Hashtag &nbsp;<i class="fa fa-chevron-right fa-2 "></i></a>
+      </div>
+    </div>
+    
+    <div class="item">
+      <h1>Step 1: Choose a Hashtag</h1>
+      <div class="walkthrough-body">
+      <div class="row">
+
+	<div class="col-sm-9">
+<p class="lead">The hashtag is the cornerstone of an effective campaign.</p>
+<p>
+Pick the right one to represent your campaign and connect with your audience. And keep it simple with the following:
+<ul>
+<li><strong>Is memorable.</strong> So your customers can easily recall them.
+<li><strong>Is short.</strong> So the hashtag can be easily typed on a mobile keypad. Alphabetic is best.
+<li><strong>Is not already in use.</strong> To see if another brand is using the same hashtag, <a href="https://twitter.com/search-home" target="_target">search for it</a> on Twitter.
+</ul>
+</p>
+<p>
+Some great hashtags include 
+<a href="https://twitter.com/search?q=%23AskObama&src=typd" target="_target">#AskObama</a>, 
+<a href="https://twitter.com/search?q=%23HeForShe&src=tyah" target="_target">#HeForShe</a> and 
+<a href="https://twitter.com/search?q=%23dovebeautifulage&src=tyah" target="_target">#DoveBeautifulAge</a>.  
+If you need more help, read this <a href="https://blog.twitter.com/2013/how-to-choose-a-hashtag" target="_target">great post</a> 
+on our Twitter blog on "How to Choose a Hashtag".
+</p>
+	</div>
+	<div class="col-sm-3 hidden-sm hidden-xs">
+		<div class="panel panel-default">
+		  <div class="panel-body">
+		    <img src="images/campaigns/hashtag.png" width="100%">
+		  </div>
+		</div>
+	</div>
+
+	</div>
+	  </div>
+	  <div class="walkthrough-nav">
+			<a class="btn btn-md btn-default hidden-xs" href="#carousel-example-generic" role="button" data-slide="prev"><i class="fa fa-chevron-left fa-2 "></i>&nbsp; Return to Previous</a>
+			<a class="btn btn-md btn-primary pull-right" href="#carousel-example-generic" role="button" data-slide="next">Step 2: Add a Tweet button to your website &nbsp;<i class="fa fa-chevron-right fa-2 "></i></a>
+      	</p>
+      </div>
+    </div>
+    
+    <div class="item">
+      <h1>Step 2: Add a Tweet button to your website</h1>
+      <div class="walkthrough-body">
+<div class="row">
+	<div class="col-sm-9">
+
+		<p class="lead">Engage your audience directly from your website with a Tweet button.</p>
+		
+		<p>The easiest way to create a hashtag button is by using our 
+		<a href="https://about.twitter.com/resources/buttons" target="_target">Twitter Button Builder</a>. Be sure to remember the following:
+		<ul>
+		<li>Add your hashtag to drive the campaign.
+		<li>Include a URL, so people click through to your website. 
+		<li>Specify your @handle via the "Recommend" option to drive followers.
+		</ul>
+		Upon completing the builder, you should have HTML code similar to the following to add to your website source.
+		</p>
+		<div class="zero-clipboard">
+			<span class="btn-clipboard copy-button" data-clipboard-text="Copy Me!" data-toggle="tooltip" data-placement="top" title="Copied">Copy</span>
+		</div>
+		<pre class="code">&lt;a href="https://twitter.com/intent/tweet?button_hashtag=Camping" class="twitter-hashtag-button" data-size="large" data-related="dickc,twitter" data-via="camping"  data-url="http://bit.ly/SOMETHING"&gt;Tweet #Camping&lt;/a&gt;
+&lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');&lt;/script&gt;
+</pre>
+		<p>
+		If you want to further customize the button (make it larger or better fit your site), take a look 
+		at <a href="https://dev.twitter.com/web/intents" target="_target">Twitter Web Intents</a>.
+		</p>
+		
+	</div>
+	<div class="col-sm-3 hidden-sm hidden-xs">
+		<div class="panel panel-default">
+		  <div class="panel-body">
+		    <img src="images/campaigns/button_hashtag_builder.png" width="100%">
+		  </div>
+		</div>
+	</div>
+</div>
+
+	  </div>
+	  <div class="walkthrough-nav">
+			<a class="btn btn-md btn-default hidden-xs" href="#carousel-example-generic" role="button" data-slide="prev"><i class="fa fa-chevron-left fa-2 "></i>&nbsp; Return to Previous</a>
+			<a class="btn btn-md btn-primary pull-right" href="#carousel-example-generic" role="button" data-slide="next">Step 3: Create a Collection &nbsp;<i class="fa fa-chevron-right fa-2 "></i></a>
+      </div>
+    </div>
+      
+    <div class="item">
+      <h1>Step 3: Create a Collection</h1>
+      <div class="walkthrough-body">
+      
+<p class="lead">Collections let you store, display and curate the best Tweets from your audience.<p>
+
+<div class="row">
+	<div class="col-sm-7">
+
+The easiest way to create a Collection is via <a href="https://tweetdeck.twitter.com/" target="_target">TweetDeck</a>. 
+Follow the below steps:
+
+<ol>
+	<li>Login via <a href="https://tweetdeck.twitter.com/" target="_target">TweetDeck</a>
+	<li>Click on "Add Column" in the left hand sidebar and choose "Collections"
+	<li>Click on the "Create Collection" button. Your new collection will be in the rightmost column
+	<li>Specify a name and description as desired.
+</ol> 
+
+Once your Collection has been created, you can add it to your website in the next step.
+
+	</div>
+	<div class="col-sm-5 hidden-sm hidden-xs">
+		<div class="panel panel-default">
+		  <div class="panel-body">
+		    <img src="images/campaigns/collection_builder.png" width="100%">
+		  </div>
+		</div>
+	</div>
+</div>
+ 
+</p>
+	  </div>
+	  <div class="walkthrough-nav">
+			<a class="btn btn-md btn-default hidden-xs" href="#carousel-example-generic" role="button" data-slide="prev"><i class="fa fa-chevron-left fa-2 "></i>&nbsp; Return to Previous</a>
+			<a class="btn btn-md btn-primary pull-right" href="#carousel-example-generic" role="button" data-slide="next">Step 4: Add a Collection to your website &nbsp;<i class="fa fa-chevron-right fa-2 "></i></a>
+      	</p>
+      </div>
+    </div>
+    
+    <div class="item">
+      <h1>Step 4: Add a Collection to your website</h1>
+      <div class="walkthrough-body">
+<p class="lead">A Collection Widget displays curated Tweets on your website.</p>
+<p>
+	Follow the below steps to generate code for your website:
+	
+<ol>
+	<li>Open the <a href="https://twitter.com/settings/widgets" target="_target">Twitter Widget builder</a>
+	<li>Click on the "Create New" button
+	<li>Under "Choose a timeline source", click on "Collection"
+	<li>In the "Collection" drop-down, select the Collection you created in the previous step 
+	<li>Specify additional options, as desired.
+	<li>Click on the "Create Widget" button at the bottom
+	<li>The page should now show HTML, similar to the one below. Add this HTML to your website source.
+</ol> 
+
+</p>
+<div class="zero-clipboard">
+	<span class="btn-clipboard copy-button" data-clipboard-text="Copy Me!" data-toggle="tooltip" data-placement="top" title="Copied">Copy</span>
+</div>
+<pre class="code">&lt;a class="twitter-timeline" href="https://twitter.com/rchoi/timelines/522875858994749443" data-widget-id="522876333395689472"&gt;#Camping&lt;/a&gt;
+&lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");&lt;/script&gt;
+</pre>
+
+<p>
+Now that your website has a Tweet Button and a Collection, lets curate Tweets into it.
+</p>
+
+	  </div>
+	  <div class="walkthrough-nav">
+			<a class="btn btn-md btn-default hidden-xs" href="#carousel-example-generic" role="button" data-slide="prev"><i class="fa fa-chevron-left fa-2 "></i>&nbsp; Return to Previous</a>
+			<a class="btn btn-md btn-primary pull-right" href="#carousel-example-generic" role="button" data-slide="next">Step 5: Curate the Collection &nbsp;<i class="fa fa-chevron-right fa-2 "></i></a>
+      </div>
+    </div> -->
+<!-- 
+    <div class="item">
+      <h1>Step 5: Curate the Collection</h1>
+      <div class="walkthrough-body"> -->
+      
+<!-- <div class="row">
+	<div class="col-sm-7">
+
+<p class="lead">Use TweetDeck to pick the best Tweets to display on your website.</p>
+
+<p>
+Now that your campaign is configured on your website, use TweetDeck to add Tweets into 
+your Collection. Follow the below best practices to discover and display tweets effectively:
+<ol>
+<li>Search for Tweets in TweetDeck by hashtag. 
+<li>If you find a Tweet you like, click on "..." and then "Add to collection" to add it to your Collection.  
+<li>Include a mix of Tweets with and without images for variety.
+</ol>
+Once you've added a couple Tweets, refresh your campaign website to see those Tweets now 
+appearing.
+</p>
+
+	</div>
+	<div class="col-sm-5 hidden-sm hidden-xs">
+		<div class="panel panel-default">
+		  <div class="panel-body">
+		    <img src="images/campaigns/tweetdeck.png" width="100%">
+		  </div>
+		</div>
+	</div>
+</div> -->
+
+      
+
+	  <!-- </div>
+	  <div class="walkthrough-nav">
+			<a class="btn btn-md btn-default hidden-xs" href="#carousel-example-generic" role="button" data-slide="prev"><i class="fa fa-chevron-left fa-2 "></i>&nbsp; Return to Previous</a>
+			<a class="btn btn-md btn-primary page-scroll pull-right" href="#usecases" role="button" data-slide="next">See Use Cases &nbsp;<i class="fa fa-chevron-down fa-2 "></i></a>
+      </div> -->
+    </div>
+    
+  </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="usecases" class="section even-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                   <a href="sentiment.html">
+                    <h1>
+                    	<img src="images/bird.png" height="30" style="margin-top: -8px;">
+                    	Group Tweets
+                	</h1>
+                	</a>
+                    <p>
+                    	Reply or message to all of your contacts at a single time
+                	</p>
+					<div class="row">
+					  <div class="col-sm-6 col-md-3">
+					    <div class="thumbnail">
+					      <a href="https://askobama.twitter.com/" target="_target">
+					      	<img src="images/campaigns/example_wh.png" alt="...">
+				          </a>
+					      <div class="caption">
+					        <h4>White House Town Hall</h4>
+					        <p><a href="https://askobama.twitter.com/" class="btn btn-default" role="button" target="_target">View Website</a>
+					      </div>
+					    </div>
+					  </div>
+					  <div class="col-sm-6 col-md-3">
+					    <div class="thumbnail">
+					      <a href="http://interactive.nbcnews.com/nightly-news/williams-snowden/index.php?38432" target="_target">
+					      	<img src="images/campaigns/example_nbc.png" alt="...">
+					      </a>
+					      <div class="caption">
+					        <h4>NBC News: Edward Snowden</h4>
+					        <p><a href="http://interactive.nbcnews.com/nightly-news/williams-snowden/index.php?38432" class="btn btn-default" role="button" target="_target">View Website</a>
+					      </div>
+					    </div>
+					  </div>
+					  <div class="col-sm-6 col-md-3">
+					    <div class="thumbnail">
+					      <a href="https://register.accenture.com/us-en/registration/Documents/big-data-mp.html#sf32530744" target="_target">
+					      	<img src="images/campaigns/example_accenture.png" alt="...">
+					      </a>
+					      <div class="caption">
+					        <h4>Accenture: #DigitalChat</h4>
+					        <p><a href="https://register.accenture.com/us-en/registration/Documents/big-data-mp.html#sf32530744" class="btn btn-default" role="button" target="_target">View Website</a>
+					      </div>
+					    </div>
+					  </div>
+					  <div class="col-sm-6 col-md-3">
+					    <div class="thumbnail">
+					      <a href="http://sharks.nhl.com/club/page.htm?id=82861" target="_target">
+					        <img src="images/campaigns/example_nhl.png" alt="...">
+					      </a>
+					      <div class="caption">
+					        <h4>San Jose Sharks: Fan Zone</h4>
+					        <p><a href="http://sharks.nhl.com/club/page.htm?id=82861" class="btn btn-default" role="button" target="_target">View Website</a>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+                    </p>
+                    
+					<!-- <center>
+                    	<a class="btn btn-lg btn-primary page-scroll" href="http://dev.twitter.com" target="_target">Read the documentation &nbsp;<i class="fa fa-chevron-right fa-2 "></i></a>
+                	</center> -->
+                	
+                	<br><br>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery Version 1.11.0 -->
+    <script src="js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/scrolling-nav.js"></script>
+
+    <!-- Copy code -->
+    <script src="js/ZeroClipboard.js"></script>
+ 
+    <script src="js/script.js"></script>
+
+
+</body>
+
+</html>
